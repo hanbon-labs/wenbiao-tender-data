@@ -1,0 +1,101 @@
+[
+  {
+    "id": "src-mof87",
+    "title": "政府采购货物和服务招标投标管理办法（财政部令第87号）",
+    "official_url": "https://www.ccgp.gov.cn/zcfg/mofgz/201707/t20170718_8541199.shtml",
+    "publisher": "ccgp",
+    "date_published": "2017-07-18",
+    "tender_type": "法规通则",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-gpl",
+    "title": "中华人民共和国政府采购法",
+    "official_url": "https://www.ccgp.gov.cn/zcfg/gjfg/201310/t20131029_3587339.htm",
+    "publisher": "ccgp",
+    "date_published": "2014-08-31",
+    "tender_type": "法规通则",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-gpl-impl",
+    "title": "中华人民共和国政府采购法实施条例（国务院令第658号）",
+    "official_url": "https://www.ccgp.gov.cn/zcfg/mof/201502/t20150227_5029424.shtml",
+    "publisher": "ccgp",
+    "date_published": "2015-02-27",
+    "tender_type": "法规通则",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-bidlaw",
+    "title": "中华人民共和国招标投标法（2017年修正）",
+    "official_url": "http://npc.people.com.cn/n1/2018/0105/c14576-29747940.html",
+    "publisher": "npc",
+    "date_published": "2018-01-05",
+    "tender_type": "法规通则",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-bid-impl",
+    "title": "中华人民共和国招标投标法实施条例（国务院令第613号）",
+    "official_url": "https://www.gov.cn/zhengce/2011-12/29/content_2602597.htm",
+    "publisher": "gov",
+    "date_published": "2011-12-29",
+    "tender_type": "法规通则",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-need22",
+    "title": "关于印发《政府采购需求管理办法》的通知（财库〔2021〕22号）",
+    "official_url": "https://www.ccgp.gov.cn/zcfg/mof/202105/t20210511_16264358.htm",
+    "publisher": "ccgp",
+    "date_published": "2021-05-11",
+    "tender_type": "法规通则",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-ccgp-2020-score",
+    "title": "为用好综合评分法出谋划策",
+    "official_url": "https://www.ccgp.gov.cn/llsw/202009/t20200915_15070380.htm",
+    "publisher": "ccgp",
+    "date_published": "2020-09-15",
+    "tender_type": "公开文本",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-ccgp-2026-03",
+    "title": "拨开综合评分法迷雾：探讨分值设置与评审因素对应的内在逻辑及完善路径",
+    "official_url": "https://www.ccgp.gov.cn/llsw/202603/t20260324_26305325.htm",
+    "publisher": "ccgp",
+    "date_published": "2026-03-24",
+    "tender_type": "公开文本",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-ccgp-2022-01",
+    "title": "评审因素如何才能做到细化和量化？",
+    "official_url": "https://www.ccgp.gov.cn/llsw/202201/t20220118_17531138.htm",
+    "publisher": "ccgp",
+    "date_published": "2022-01-18",
+    "tender_type": "公开文本",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-ccgp-2026-04",
+    "title": "谈谈评审因素设定的准则与方向",
+    "official_url": "https://www.ccgp.gov.cn/llsw/202604/t20260428_26467654.htm",
+    "publisher": "ccgp",
+    "date_published": "2026-04-28",
+    "tender_type": "公开文本",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-ccgp-2019-07",
+    "title": "谨防评审因素设置中的五个“雷区”",
+    "official_url": "https://www.ccgp.gov.cn/llsw/201907/t20190705_12397439.htm",
+    "publisher": "ccgp",
+    "date_published": "2019-07-05",
+    "tender_type": "公开文本",
+    "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  }
+]

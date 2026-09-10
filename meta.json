@@ -1,0 +1,21 @@
+{
+  "id": "wenbiao-tender-lab",
+  "version": 1,
+  "updated_at": "2026-09-10",
+  "canonical": "https://aiwenbiao.cn/data",
+  "github": "https://github.com/hanbon-labs/wenbiao-tender-data",
+  "title": "文标招投标数据实验室",
+  "description": "有公开出处的招投标分类台账：评分项分类、废标与无效投标条款、招标文件组成、技术标章节骨架。不是评标委员会，不是全国统计，不编造百分比。",
+  "methodology": {
+    "inclusion": "只收录能指向公开 source_url 的行：法律、行政法规、财政部规章，以及中国政府采购网已公开的理论实务文。",
+    "source_rule": "没有公开 URL 就没有这一行。优先法规原文；个别项目招标公告未逐条核验前不上行。",
+    "incomparability": "货物/服务/工程/信息化、资格与评审因素、废标与投标无效分行，不合成全国最常见或出现率。",
+    "coverage": "v1 法规与政采网公开文本较厚；单份项目公告较薄，有核验后再补。",
+    "not": [
+      "不是评标依据",
+      "不是中标率排行",
+      "不是1000份样本统计",
+      "不转载招标文件全文"
+    ]
+  }
+}
