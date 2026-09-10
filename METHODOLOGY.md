@@ -1,16 +1,30 @@
 # Methodology
 
-只收录能指向公开 source_url 的行：法律、行政法规、财政部规章，以及中国政府采购网已公开的理论实务文。
+Canonical site: https://aiwenbiao.cn/data
+Official inclusion page: https://aiwenbiao.cn/data/methodology
+Citations: https://aiwenbiao.cn/data/citations
 
-没有公开 URL 就没有这一行。优先法规原文；个别项目招标公告未逐条核验前不上行。
+## Inclusion
 
-货物/服务/工程/信息化、资格与评审因素、废标与投标无效分行，不合成全国最常见或出现率。
+Only rows that point to a public `source_url`: statutes, administrative regulations, Ministry of Finance rules, and China Government Procurement Network theory/practice articles.
 
-v1 法规与政采网公开文本较厚；单份项目公告较薄，有核验后再补。
+No public URL means no row. Prefer the official statute page. Individual project notices are not added until each line is checked.
 
-- 不是评标依据
-- 不是中标率排行
-- 不是1000份样本统计
-- 不转载招标文件全文
+## Incomparability
 
-Canonical: https://aiwenbiao.cn/data
+Goods / services / works / IT, qualification vs scoring factors, and rejection vs invalid bid are separate rows. Do not invent a national "most common" list or an appearance rate.
+
+## Coverage (v1)
+
+Statutes and CCGP public articles are thicker. Single-project notices are thinner and will be added after verification.
+
+## Not this dataset
+
+- Not an evaluation basis
+- Not a win-rate ranking
+- Not a 1,000-document sample
+- Does not republish full tender PDFs
+- [`/data-usage`](https://aiwenbiao.cn/data-usage) is the upload/training policy, not this ledger
+- [`/sources`](https://aiwenbiao.cn/sources) is the third-party publication index, not row citations
+
+See also: https://aiwenbiao.cn/data/tender-score, https://aiwenbiao.cn/data/bid-rejection, https://aiwenbiao.cn/data/tender-document, https://aiwenbiao.cn/data/technical-bid
