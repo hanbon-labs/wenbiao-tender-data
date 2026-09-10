@@ -112,7 +112,11 @@ def sample_table(rows: list[dict]) -> str:
         by_kind.setdefault(row["kind"], []).append(row)
     picked: list[dict] = []
     for kind, _label, _url in KIND_META:
-        picked.extend(by_kind.get(kind, [])[:2])
+        group = sorted(
+            by_kind.get(kind, []),
+            key=lambda r: (-int(r.get("year") or 0), r["id"]),
+        )
+        picked.extend(group[:2])
     lines = [
         "| \u540d\u79f0 | `kind` | \u5206\u90e8 | \u51fa\u5904 |",
         "| --- | --- | --- | --- |",
@@ -128,12 +132,12 @@ def sample_table(rows: list[dict]) -> str:
 
 
 def files_block() -> str:
-    return """- `ledger.json` / `csv/ledger.csv` \u2014 \u5168\u90e8 68 \u884c
-- `taxonomy-score-categories.json` \u2014 \u8bc4\u5206\u9879 22
-- `taxonomy-rejection-rules.json` \u2014 \u5e9f\u6807/\u65e0\u6548/\u5426\u51b3 13
-- `taxonomy-document-parts.json` \u2014 \u62db\u6807\u6587\u4ef6\u7ed3\u6784 16
-- `taxonomy-tech-chapters.json` \u2014 \u6280\u672f\u6807\u7ae0\u8282 7
-- `score-method-rows.json` \u2014 \u8bc4\u5206\u529e\u6cd5/\u884c\u4e1a\u5bf9\u7167 10
+    return """- `ledger.json` / `csv/ledger.csv` \u2014 \u5168\u90e8\u53ef\u5c55\u793a\u884c
+- `taxonomy-score-categories.json` \u2014 \u8bc4\u5206\u9879
+- `taxonomy-rejection-rules.json` \u2014 \u5e9f\u6807/\u65e0\u6548/\u5426\u51b3
+- `taxonomy-document-parts.json` \u2014 \u62db\u6807\u6587\u4ef6\u7ed3\u6784
+- `taxonomy-tech-chapters.json` \u2014 \u6280\u672f\u6807\u7ae0\u8282
+- `score-method-rows.json` \u2014 \u8bc4\u5206\u529e\u6cd5/\u884c\u4e1a\u5bf9\u7167
 - `notices.json` / `meta.json` \u2014 \u51fa\u5904\u5143\u6570\u636e
 - [`SOURCES.md`](SOURCES.md) \u2014 \u51fa\u5904\u6e05\u5355
 - [`METHODOLOGY.md`](METHODOLOGY.md) \u2014 \u6536\u5f55\u53e3\u5f84"""
@@ -155,7 +159,7 @@ def main() -> None:
 
 {lang_bar("zh")}
 
-\u6709\u516c\u5f00 `source_url` \u7684\u62db\u6295\u6807\u5206\u7c7b\u53f0\u8d26\uff08JSON / CSV\uff09\u3002v1 **{len(rows)} \u884c**\uff0c2026-09-10\u3002
+\u6709\u516c\u5f00 `source_url` \u7684\u62db\u6295\u6807\u5206\u7c7b\u53f0\u8d26\uff08JSON / CSV\uff09\u3002v2 **{len(rows)} \u884c**\uff0c2026-09-10\u3002
 
 \u89c4\u8303\u7ad9\uff1a[{data}]({data})
 
@@ -163,7 +167,7 @@ def main() -> None:
 
 {inventory}
 
-\u8bc4\u5206\u529e\u6cd5/\u884c\u4e1a\u5bf9\u7167\u540c 10 \u884c\uff0c\u8fd8\u5728 [{SITE["goods"]}]({goods}) \u4e0e [{SITE["industry"]}]({industry})\u3002
+\u8bc4\u5206\u529e\u6cd5/\u884c\u4e1a\u5bf9\u7167\u884c\u8fd8\u5728 [{SITE["goods"]}]({goods}) \u4e0e [{SITE["industry"]}]({industry})\u3002
 
 ## \u5b57\u6bb5
 
@@ -191,7 +195,7 @@ def main() -> None:
 
 {lang_bar("en")}
 
-Classification ledger with a public `source_url` on every row (JSON / CSV). v1 **{len(rows)} rows**, 2026-09-10.
+Classification ledger with a public `source_url` on every row (JSON / CSV). v2 **{len(rows)} rows**, 2026-09-10.
 
 Canonical site: [{data}]({data})
 
@@ -199,7 +203,7 @@ Canonical site: [{data}]({data})
 
 {inventory}
 
-The 10 method/industry rows also appear on [{SITE["goods"]}]({goods}) and [{SITE["industry"]}]({industry}).
+Method/industry rows also appear on [{SITE["goods"]}]({goods}) and [{SITE["industry"]}]({industry}).
 
 ## Fields
 
@@ -225,7 +229,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "zh-Hant": (
             "README.zh-Hant.md",
             "\u6587\u6a19\u62db\u6295\u6a19\u5206\u985e\u6578\u64da\u96c6",
-            f"\u6bcf\u5217\u90fd\u6709\u516c\u958b `source_url` \u7684\u5206\u985e\u81fa\u5e33\uff08JSON / CSV\uff09\u3002v1 **{len(rows)} \u5217**\u3002",
+            f"\u6bcf\u5217\u90fd\u6709\u516c\u958b `source_url` \u7684\u5206\u985e\u81fa\u5e33\uff08JSON / CSV\uff09\u3002v2 **{len(rows)} \u5217**\u3002",
             "\u898f\u7bc4\u7ad9",
             "\u6578\u64da\u69cb\u6210",
             "\u6b04\u4f4d",
@@ -235,7 +239,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "ja": (
             "README.ja.md",
             "WenBiao \u4e2d\u56fd\u5165\u672d\u5206\u985e\u30c7\u30fc\u30bf\u30bb\u30c3\u30c8",
-            f"\u5404\u884c\u306b\u516c\u958b `source_url` \u304c\u3042\u308b\u5206\u985e\u53f0\u5e33\uff08JSON / CSV\uff09\u3002v1 **{len(rows)} \u884c**\u3002",
+            f"\u5404\u884c\u306b\u516c\u958b `source_url` \u304c\u3042\u308b\u5206\u985e\u53f0\u5e33\uff08JSON / CSV\uff09\u3002v2 **{len(rows)} \u884c**\u3002",
             "\u6b63\u898f\u30b5\u30a4\u30c8",
             "\u30c7\u30fc\u30bf\u69cb\u6210",
             "\u30d5\u30a3\u30fc\u30eb\u30c9",
@@ -245,7 +249,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "ko": (
             "README.ko.md",
             "WenBiao \uc785\ucc30 \ubd84\ub958 \ub370\uc774\ud130\uc14b",
-            f"\ud589\ub9c8\ub2e4 \uacf5\uac1c `source_url` \uc774 \uc788\ub294 \ubd84\ub958 \uc6d0\uc7a5(JSON / CSV). v1 **{len(rows)} \ud589**.",
+            f"\ud589\ub9c8\ub2e4 \uacf5\uac1c `source_url` \uc774 \uc788\ub294 \ubd84\ub958 \uc6d0\uc7a5(JSON / CSV). v2 **{len(rows)} \ud589**.",
             "\uc815\uaddc \uc0ac\uc774\ud2b8",
             "\ub370\uc774\ud130 \uad6c\uc131",
             "\ud544\ub4dc",
@@ -255,7 +259,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "es": (
             "README.es.md",
             "Conjunto de clasificaci\u00f3n de licitaciones WenBiao",
-            f"Libro mayor con `source_url` p\u00fablico en cada fila (JSON / CSV). v1 **{len(rows)} filas**.",
+            f"Libro mayor con `source_url` p\u00fablico en cada fila (JSON / CSV). v2 **{len(rows)} filas**.",
             "Sitio can\u00f3nico",
             "Contenido",
             "Campos",
@@ -265,7 +269,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "fr": (
             "README.fr.md",
             "Jeu de donn\u00e9es de classification d'appels d'offres WenBiao",
-            f"Registre avec un `source_url` public sur chaque ligne (JSON / CSV). v1 **{len(rows)} lignes**.",
+            f"Registre avec un `source_url` public sur chaque ligne (JSON / CSV). v2 **{len(rows)} lignes**.",
             "Site canonique",
             "Contenu",
             "Champs",
@@ -275,7 +279,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "de": (
             "README.de.md",
             "WenBiao-Klassifikationsdatensatz f\u00fcr Ausschreibungen",
-            f"Ledger mit \u00f6ffentlicher `source_url` in jeder Zeile (JSON / CSV). v1 **{len(rows)} Zeilen**.",
+            f"Ledger mit \u00f6ffentlicher `source_url` in jeder Zeile (JSON / CSV). v2 **{len(rows)} Zeilen**.",
             "Kanonische Seite",
             "Inhalt",
             "Felder",
@@ -285,7 +289,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "pt": (
             "README.pt.md",
             "Conjunto de classifica\u00e7\u00e3o de licita\u00e7\u00f5es WenBiao",
-            f"Livro-raz\u00e3o com `source_url` p\u00fablico em cada linha (JSON / CSV). v1 **{len(rows)} linhas**.",
+            f"Livro-raz\u00e3o com `source_url` p\u00fablico em cada linha (JSON / CSV). v2 **{len(rows)} linhas**.",
             "Site can\u00f4nico",
             "Conte\u00fado",
             "Campos",
@@ -295,7 +299,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "ru": (
             "README.ru.md",
             "\u041d\u0430\u0431\u043e\u0440 \u043a\u043b\u0430\u0441\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u0442\u0435\u043d\u0434\u0435\u0440\u043e\u0432 WenBiao",
-            f"\u0420\u0435\u0435\u0441\u0442\u0440 \u0441 \u043f\u0443\u0431\u043b\u0438\u0447\u043d\u044b\u043c `source_url` \u0432 \u043a\u0430\u0436\u0434\u043e\u0439 \u0441\u0442\u0440\u043e\u043a\u0435 (JSON / CSV). v1 **{len(rows)} \u0441\u0442\u0440\u043e\u043a**.",
+            f"\u0420\u0435\u0435\u0441\u0442\u0440 \u0441 \u043f\u0443\u0431\u043b\u0438\u0447\u043d\u044b\u043c `source_url` \u0432 \u043a\u0430\u0436\u0434\u043e\u0439 \u0441\u0442\u0440\u043e\u043a\u0435 (JSON / CSV). v2 **{len(rows)} \u0441\u0442\u0440\u043e\u043a**.",
             "\u041a\u0430\u043d\u043e\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0441\u0430\u0439\u0442",
             "\u0421\u043e\u0441\u0442\u0430\u0432",
             "\u041f\u043e\u043b\u044f",
@@ -305,7 +309,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "ar": (
             "README.ar.md",
             "\u0645\u062c\u0645\u0648\u0639\u0629 \u062a\u0635\u0646\u064a\u0641 \u0627\u0644\u0645\u0646\u0627\u0642\u0635\u0627\u062a WenBiao",
-            f"\u0633\u062c\u0644 \u0628\u0647 `source_url` \u0639\u0627\u0645 \u0641\u064a \u0643\u0644 \u0635\u0641 (JSON / CSV). v1 **{len(rows)} \u0635\u0641\u064b\u0627**.",
+            f"\u0633\u062c\u0644 \u0628\u0647 `source_url` \u0639\u0627\u0645 \u0641\u064a \u0643\u0644 \u0635\u0641 (JSON / CSV). v2 **{len(rows)} \u0635\u0641\u064b\u0627**.",
             "\u0627\u0644\u0645\u0648\u0642\u0639 \u0627\u0644\u0631\u0633\u0645\u064a",
             "\u0627\u0644\u0645\u062d\u062a\u0648\u0649",
             "\u0627\u0644\u062d\u0642\u0648\u0644",
@@ -315,7 +319,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "vi": (
             "README.vi.md",
             "T\u1eadp d\u1eef li\u1ec7u ph\u00e2n lo\u1ea1i \u0111\u1ea5u th\u1ea7u WenBiao",
-            f"S\u1ed5 c\u00e1i c\u00f3 `source_url` c\u00f4ng khai m\u1ed7i d\u00f2ng (JSON / CSV). v1 **{len(rows)} d\u00f2ng**.",
+            f"S\u1ed5 c\u00e1i c\u00f3 `source_url` c\u00f4ng khai m\u1ed7i d\u00f2ng (JSON / CSV). v2 **{len(rows)} d\u00f2ng**.",
             "Trang chu\u1ea9n",
             "Th\u00e0nh ph\u1ea7n",
             "Tr\u01b0\u1eddng",
@@ -325,7 +329,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "id": (
             "README.id.md",
             "Dataset klasifikasi tender WenBiao",
-            f"Buku besar dengan `source_url` publik di setiap baris (JSON / CSV). v1 **{len(rows)} baris**.",
+            f"Buku besar dengan `source_url` publik di setiap baris (JSON / CSV). v2 **{len(rows)} baris**.",
             "Situs kanonis",
             "Isi",
             "Bidang",
@@ -335,7 +339,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "th": (
             "README.th.md",
             "\u0e0a\u0e38\u0e14\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e1b\u0e23\u0e30\u0e40\u0e20\u0e17\u0e01\u0e32\u0e23\u0e1b\u0e23\u0e30\u0e21\u0e39\u0e25 WenBiao",
-            f"\u0e41\u0e15\u0e48\u0e25\u0e30\u0e41\u0e16\u0e27\u0e17\u0e35\u0e48\u0e17\u0e38\u0e01\u0e41\u0e16\u0e27\u0e21\u0e35 `source_url` \u0e2a\u0e32\u0e18\u0e32\u0e23\u0e13\u0e30 (JSON / CSV). v1 **{len(rows)} \u0e41\u0e16\u0e27**.",
+            f"\u0e41\u0e15\u0e48\u0e25\u0e30\u0e41\u0e16\u0e27\u0e17\u0e35\u0e48\u0e17\u0e38\u0e01\u0e41\u0e16\u0e27\u0e21\u0e35 `source_url` \u0e2a\u0e32\u0e18\u0e32\u0e23\u0e13\u0e30 (JSON / CSV). v2 **{len(rows)} \u0e41\u0e16\u0e27**.",
             "\u0e40\u0e27\u0e47\u0e1a\u0e16\u0e32\u0e19",
             "\u0e42\u0e04\u0e23\u0e07\u0e2a\u0e23\u0e49\u0e32\u0e07",
             "\u0e1f\u0e35\u0e25\u0e14\u0e4c",
@@ -345,7 +349,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "it": (
             "README.it.md",
             "Dataset di classificazione gare WenBiao",
-            f"Registro con `source_url` pubblico su ogni riga (JSON / CSV). v1 **{len(rows)} righe**.",
+            f"Registro con `source_url` pubblico su ogni riga (JSON / CSV). v2 **{len(rows)} righe**.",
             "Sito canonico",
             "Contenuto",
             "Campi",
@@ -355,7 +359,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
         "hi": (
             "README.hi.md",
             "WenBiao \u091f\u0947\u0902\u0921\u0930 \u0935\u0930\u094d\u0917\u0940\u0915\u0930\u0923 \u0921\u0947\u091f\u093e\u0938\u0947\u091f",
-            f"\u0939\u0930 \u092a\u0902\u0915\u094d\u0924\u093f \u092a\u0930 \u0938\u093e\u0930\u094d\u0935\u091c\u0928\u093f\u0915 `source_url` (JSON / CSV). v1 **{len(rows)} \u092a\u0902\u0915\u094d\u0924\u093f\u092f\u093e\u0901**.",
+            f"\u0939\u0930 \u092a\u0902\u0915\u094d\u0924\u093f \u092a\u0930 \u0938\u093e\u0930\u094d\u0935\u091c\u0928\u093f\u0915 `source_url` (JSON / CSV). v2 **{len(rows)} \u092a\u0902\u0915\u094d\u0924\u093f\u092f\u093e\u0901**.",
             "\u0915\u0948\u0928\u094b\u0928\u093f\u0915\u0932 \u0938\u093e\u0907\u091f",
             "\u0938\u093e\u092e\u0917\u094d\u0930\u0940",
             "\u0915\u094d\u0937\u0947\u0924\u094d\u0930",
@@ -367,7 +371,7 @@ Compilation: MIT. Statute and notice copyright stays with the publishers.
     others["hi"] = (
         "README.hi.md",
         "WenBiao \u091f\u0947\u0902\u0921\u0930 \u0935\u0930\u094d\u0917\u0940\u0915\u0930\u0923 \u0921\u0947\u091f\u093e\u0938\u0947\u091f",
-        f"\u0939\u0930 \u092a\u0902\u0915\u094d\u0924\u093f \u092a\u0930 \u0938\u093e\u0930\u094d\u0935\u091c\u0928\u093f\u0915 `source_url` (JSON / CSV). v1 **{len(rows)} \u092a\u0902\u0915\u094d\u0924\u093f\u092f\u093e\u0901**.",
+        f"\u0939\u0930 \u092a\u0902\u0915\u094d\u0924\u093f \u092a\u0930 \u0938\u093e\u0930\u094d\u0935\u091c\u0928\u093f\u0915 `source_url` (JSON / CSV). v2 **{len(rows)} \u092a\u0902\u0915\u094d\u0924\u093f\u092f\u093e\u0901**.",
         "\u0915\u0948\u0928\u094b\u0928\u093f\u0915\u0932 \u0938\u093e\u0907\u091f",
         "\u0938\u093e\u092e\u0917\u094d\u0930\u0940",
         "\u0915\u094d\u0937\u0947\u0924\u094d\u0930",

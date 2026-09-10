@@ -97,5 +97,86 @@
     "date_published": "2019-07-05",
     "tender_type": "公开文本",
     "note": "官方可核原文或政采网公开文章，不是某一项目的招标文件全文。"
+  },
+  {
+    "id": "src-mof110",
+    "title": "政府采购框架协议采购方式管理暂行办法（财政部令第110号）",
+    "official_url": "https://www.ccgp.gov.cn/zcfg/mofgz/202201/t20220127_17561525.htm",
+    "publisher": "ccgp",
+    "date_published": "2022-01-27",
+    "tender_type": "法规通则",
+    "note": "2022年3月1日起施行。官方可核原文。"
+  },
+  {
+    "id": "src-innov-2024",
+    "title": "政府采购合作创新采购方式管理暂行办法",
+    "official_url": "https://www.ccgp.gov.cn/zcfg/mof/202404/t20240426_21937284.htm",
+    "publisher": "ccgp",
+    "date_published": "2024-04-26",
+    "tender_type": "法规通则",
+    "note": "2024年6月1日起施行。官方可核原文。"
+  },
+  {
+    "id": "src-consult-214",
+    "title": "政府采购竞争性磋商采购方式管理暂行办法（财库〔2014〕214号）",
+    "official_url": "https://www.ccgp.gov.cn/zcfg/mof/201501/t20150121_4942852.htm",
+    "publisher": "ccgp",
+    "date_published": "2015-01-21",
+    "tender_type": "法规通则",
+    "note": "官方可核原文。价格分区间仍以该办法第二十四条为准。"
+  },
+  {
+    "id": "src-egov-210",
+    "title": "政务信息系统政府采购管理暂行办法（财库〔2017〕210号）",
+    "official_url": "http://www.ccgp.gov.cn/zcfg/mof/201801/t20180102_9425012.htm",
+    "publisher": "ccgp",
+    "date_published": "2018-01-02",
+    "tender_type": "信息化",
+    "note": "官方可核原文。政务信息系统价格分是固定值，不是招标货物/服务下限。"
+  },
+  {
+    "id": "src-n38",
+    "title": "关于促进政府采购公平竞争优化营商环境的通知（财库〔2019〕38号）",
+    "official_url": "https://www.ccgp.gov.cn/specialtopic/yhzcyshj/bwxd/201908/t20190812_12658024.htm",
+    "publisher": "ccgp",
+    "date_published": "2019-08-12",
+    "tender_type": "法规通则",
+    "note": "官方可核原文。"
+  },
+  {
+    "id": "src-gb33-2024",
+    "title": "政府采购领域整建促三年行动方案（2024—2026年）（国办发〔2024〕33号）",
+    "official_url": "https://www.ccgp.gov.cn/zcfg/gwywj/202407/t20240709_22583066.htm",
+    "publisher": "ccgp",
+    "date_published": "2024-07-04",
+    "tender_type": "法规通则",
+    "note": "国务院办公厅公开文件。"
+  },
+  {
+    "id": "src-ccgp-2025-11",
+    "title": "为综合评分法正名",
+    "official_url": "https://www.ccgp.gov.cn/llsw/202511/t20251112_25678095.htm",
+    "publisher": "ccgp",
+    "date_published": "2025-11-12",
+    "tender_type": "公开文本",
+    "note": "中国政府采购网理论实务。"
+  },
+  {
+    "id": "src-ccgp-2025-05",
+    "title": "如何避免因“格式性”要求而废标",
+    "official_url": "https://www.ccgp.gov.cn/llsw/202505/t20250509_24565317.htm",
+    "publisher": "ccgp",
+    "date_published": "2025-05-09",
+    "tender_type": "公开文本",
+    "note": "中国政府采购网理论实务。"
+  },
+  {
+    "id": "src-ccgp-2025-02",
+    "title": "投标文件为同一WPS账户制作 能认定为围标串标吗",
+    "official_url": "https://www.ccgp.gov.cn/llsw/202502/t20250225_24208832.htm",
+    "publisher": "ccgp",
+    "date_published": "2025-02-25",
+    "tender_type": "公开文本",
+    "note": "中国政府采购网理论实务。"
   }
 ]

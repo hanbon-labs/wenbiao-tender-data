@@ -12,6 +12,6 @@ Goods / services / works / IT, qualification vs scoring, and rejection vs invali
 
 ## Coverage (v1)
 
-68 rows. Statutes and CCGP public articles first; single-project notices after line-by-line check.
+129 rows. Statutes and CCGP public articles first; single-project notices after line-by-line check.
 
 See https://aiwenbiao.cn/data

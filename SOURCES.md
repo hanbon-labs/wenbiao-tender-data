@@ -11,3 +11,12 @@
 - 评审因素如何才能做到细化和量化？: https://www.ccgp.gov.cn/llsw/202201/t20220118_17531138.htm
 - 谈谈评审因素设定的准则与方向: https://www.ccgp.gov.cn/llsw/202604/t20260428_26467654.htm
 - 谨防评审因素设置中的五个“雷区”: https://www.ccgp.gov.cn/llsw/201907/t20190705_12397439.htm
+- 政府采购框架协议采购方式管理暂行办法（财政部令第110号）: https://www.ccgp.gov.cn/zcfg/mofgz/202201/t20220127_17561525.htm
+- 政府采购合作创新采购方式管理暂行办法: https://www.ccgp.gov.cn/zcfg/mof/202404/t20240426_21937284.htm
+- 政府采购竞争性磋商采购方式管理暂行办法（财库〔2014〕214号）: https://www.ccgp.gov.cn/zcfg/mof/201501/t20150121_4942852.htm
+- 政务信息系统政府采购管理暂行办法（财库〔2017〕210号）: http://www.ccgp.gov.cn/zcfg/mof/201801/t20180102_9425012.htm
+- 关于促进政府采购公平竞争优化营商环境的通知（财库〔2019〕38号）: https://www.ccgp.gov.cn/specialtopic/yhzcyshj/bwxd/201908/t20190812_12658024.htm
+- 政府采购领域整建促三年行动方案（2024—2026年）（国办发〔2024〕33号）: https://www.ccgp.gov.cn/zcfg/gwywj/202407/t20240709_22583066.htm
+- 为综合评分法正名: https://www.ccgp.gov.cn/llsw/202511/t20251112_25678095.htm
+- 如何避免因“格式性”要求而废标: https://www.ccgp.gov.cn/llsw/202505/t20250509_24565317.htm
+- 投标文件为同一WPS账户制作 能认定为围标串标吗: https://www.ccgp.gov.cn/llsw/202502/t20250225_24208832.htm

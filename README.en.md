@@ -2,7 +2,7 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-Hant.md) · **English** · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [العربية](README.ar.md) · [Tiếng Việt](README.vi.md) · [Bahasa Indonesia](README.id.md) · [ไทย](README.th.md) · [Italiano](README.it.md) · [हिन्दी](README.hi.md)
 
-Classification ledger with a public `source_url` on every row (JSON / CSV). v1 **68 rows**, 2026-09-10.
+Classification ledger with a public `source_url` on every row (JSON / CSV). v2 **129 rows**, 2026-09-10.
 
 Canonical site: [https://aiwenbiao.cn/data](https://aiwenbiao.cn/data)
 
@@ -10,14 +10,14 @@ Canonical site: [https://aiwenbiao.cn/data](https://aiwenbiao.cn/data)
 
 | 族 | `kind` | 行数 | 官网 |
 | --- | --- | ---: | --- |
-| 评分项分类 | `score_category` | 22 | https://aiwenbiao.cn/data/tender-score |
-| 废标 / 无效 / 否决 | `rejection_rule` | 13 | https://aiwenbiao.cn/data/bid-rejection |
-| 招标文件结构 | `doc_part` | 16 | https://aiwenbiao.cn/data/tender-document |
-| 技术标章节 | `chapter` | 7 | https://aiwenbiao.cn/data/technical-bid |
-| 评分办法 / 行业对照 | `notice_score_row` | 10 | https://aiwenbiao.cn/data/score-method |
-| **合计** | | **68** | https://aiwenbiao.cn/data |
+| 评分项分类 | `score_category` | 40 | https://aiwenbiao.cn/data/tender-score |
+| 废标 / 无效 / 否决 | `rejection_rule` | 29 | https://aiwenbiao.cn/data/bid-rejection |
+| 招标文件结构 | `doc_part` | 21 | https://aiwenbiao.cn/data/tender-document |
+| 技术标章节 | `chapter` | 11 | https://aiwenbiao.cn/data/technical-bid |
+| 评分办法 / 行业对照 | `notice_score_row` | 28 | https://aiwenbiao.cn/data/score-method |
+| **合计** | | **129** | https://aiwenbiao.cn/data |
 
-The 10 method/industry rows also appear on [https://aiwenbiao.cn/data/goods-vs-service](https://aiwenbiao.cn/data/goods-vs-service) and [https://aiwenbiao.cn/data/industry](https://aiwenbiao.cn/data/industry).
+Method/industry rows also appear on [https://aiwenbiao.cn/data/goods-vs-service](https://aiwenbiao.cn/data/goods-vs-service) and [https://aiwenbiao.cn/data/industry](https://aiwenbiao.cn/data/industry).
 
 ## Fields
 
@@ -43,27 +43,27 @@ The 10 method/industry rows also appear on [https://aiwenbiao.cn/data/goods-vs-s
 
 | 名称 | `kind` | 分部 | 出处 |
 | --- | --- | --- | --- |
-| 投标报价 | `score_category` | 价格 | [财政部令第87号第五十五条](https://www.ccgp.gov.cn/zcfg/mofgz/201707/t20170718_8541199.shtml) |
-| 技术或者服务水平 | `score_category` | 技术 | [财政部令第87号第五十五条](https://www.ccgp.gov.cn/zcfg/mofgz/201707/t20170718_8541199.shtml) |
-| 废标：实质响应供应商不足三家 | `rejection_rule` | 符合性 | [政府采购法第三十六条](https://www.ccgp.gov.cn/zcfg/gjfg/201310/t20131029_3587339.htm) |
-| 废标：影响采购公正的违法违规 | `rejection_rule` | 符合性 | [政府采购法第三十六条](https://www.ccgp.gov.cn/zcfg/gjfg/201310/t20131029_3587339.htm) |
-| 投标邀请 | `doc_part` | 其他 | [财政部令第87号第二十条](https://www.ccgp.gov.cn/zcfg/mofgz/201707/t20170718_8541199.shtml) |
-| 投标人须知（密封、签署、盖章） | `doc_part` | 其他 | [财政部令第87号第二十条](https://www.ccgp.gov.cn/zcfg/mofgz/201707/t20170718_8541199.shtml) |
-| 编制依据与需求理解 | `chapter` | 技术 | [财政部令第87号第二十条](https://www.ccgp.gov.cn/zcfg/mofgz/201707/t20170718_8541199.shtml) |
-| 总体技术方案 / 方案设计 | `chapter` | 技术 | [中国政府采购网理论实务，2020-09-15](https://www.ccgp.gov.cn/llsw/202009/t20200915_15070380.htm) |
-| 评标方法分为最低评标价法和综合评分法 | `notice_score_row` | 其他 | [政府采购法实施条例第三十四条](https://www.ccgp.gov.cn/zcfg/mof/201502/t20150227_5029424.shtml) |
-| 最低评标价法 | `notice_score_row` | 价格 | [政府采购法实施条例第三十四条](https://www.ccgp.gov.cn/zcfg/mof/201502/t20150227_5029424.shtml) |
+| 必须满足的核心要求应设为符合性条件，而不是全部拿去赋分 | `score_category` | 符合性 | [中国政府采购网理论实务，2026-03-24](https://www.ccgp.gov.cn/llsw/202603/t20260324_26305325.htm) |
+| 报价分 / 技术分 / 商务分 / 政策分 | `score_category` | 其他 | [中国政府采购网理论实务，2026-03-24](https://www.ccgp.gov.cn/llsw/202603/t20260324_26305325.htm) |
+| 电子标里扫描清晰度、PDF分层、电子签章位置成为新的格式争议点 | `rejection_rule` | 符合性 | [中国政府采购网理论实务，2025-05-09](https://www.ccgp.gov.cn/llsw/202505/t20250509_24565317.htm) |
+| 法律法规没有对“格式性要求”给出废标定义 | `rejection_rule` | 符合性 | [中国政府采购网理论实务，2025-05-09](https://www.ccgp.gov.cn/llsw/202505/t20250509_24565317.htm) |
+| 实质性条款应以醒目方式标明 | `doc_part` | 其他 | [中国政府采购网理论实务，2025-05-09](https://www.ccgp.gov.cn/llsw/202505/t20250509_24565317.htm) |
+| 合作创新响应文件还应包括研发完成时间、分项报价、验收标准、知识产权 | `doc_part` | 其他 | [合作创新采购方式管理暂行办法第二十条](https://www.ccgp.gov.cn/zcfg/mof/202404/t20240426_21937284.htm) |
+| 创新产品的售后服务方案 | `chapter` | 服务 | [合作创新采购方式管理暂行办法第二十条](https://www.ccgp.gov.cn/zcfg/mof/202404/t20240426_21937284.htm) |
+| 研发方案 | `chapter` | 技术 | [合作创新采购方式管理暂行办法第二十条](https://www.ccgp.gov.cn/zcfg/mof/202404/t20240426_21937284.htm) |
+| 技术分“不设扣分上限”会出现负分，不符合分值与指标对应 | `notice_score_row` | 技术 | [中国政府采购网理论实务，2026-03-24](https://www.ccgp.gov.cn/llsw/202603/t20260324_26305325.htm) |
+| “每负偏离一项扣分，扣完为止”不符合分值与量化指标一一对应 | `notice_score_row` | 技术 | [中国政府采购网理论实务，2026-03-24](https://www.ccgp.gov.cn/llsw/202603/t20260324_26305325.htm) |
 
 Full table: `ledger.json`.
 
 ## Files
 
-- `ledger.json` / `csv/ledger.csv` — 全部 68 行
-- `taxonomy-score-categories.json` — 评分项 22
-- `taxonomy-rejection-rules.json` — 废标/无效/否决 13
-- `taxonomy-document-parts.json` — 招标文件结构 16
-- `taxonomy-tech-chapters.json` — 技术标章节 7
-- `score-method-rows.json` — 评分办法/行业对照 10
+- `ledger.json` / `csv/ledger.csv` — 全部可展示行
+- `taxonomy-score-categories.json` — 评分项
+- `taxonomy-rejection-rules.json` — 废标/无效/否决
+- `taxonomy-document-parts.json` — 招标文件结构
+- `taxonomy-tech-chapters.json` — 技术标章节
+- `score-method-rows.json` — 评分办法/行业对照
 - `notices.json` / `meta.json` — 出处元数据
 - [`SOURCES.md`](SOURCES.md) — 出处清单
 - [`METHODOLOGY.md`](METHODOLOGY.md) — 收录口径
